@@ -106,7 +106,7 @@ class MaxHeap extends Heap{
         let index = 0;
         
         while(this.leftChild(index) && this.leftChild(index) > this.items[index]){
-            largerIndex = this.leftChildIndex(index);
+            let largerIndex = this.leftChildIndex(index);
             if(this.rightChild(index) && this.rightChild(index) > this.items[largerIndex]){
                 largerIndex = this.rightChildIndex(index);
             }
@@ -120,7 +120,7 @@ class MaxHeap extends Heap{
         this.items[this.items.length] = item;
         this.bubbleUp();
     }
-    
+
     // 힙에서 원소를 빼내는 함수
     // 최소 힙이라면 최솟값이 빠져나올 것이고 최대힙이라면 최댓값이 빠져나온다.
     poll(){

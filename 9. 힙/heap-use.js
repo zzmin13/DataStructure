@@ -1,22 +1,38 @@
 //앞서 구현한 heap.js를 사용하는 코드!
 
 //최소 힙을 사용하는 코드
-const mh = new MinHeap();
-mh.add(1);
-mh.add(10);
-mh.add(5);
-mh.add(100);
-mh.add(8);
+const minheap = new MinHeap();
+minheap.add(1);
+minheap.add(10);
+minheap.add(5);
+minheap.add(100);
+minheap.add(8);
 
-console.log(mh); //array(5) [1, 8, 5, 100, 10]
+console.log(minheap); //array(5) [1, 8, 5, 100, 10]
 
-console.log(mh.poll()); // 1
-console.log(mh.poll()); // 5
-console.log(mh.poll()); // 8
-console.log(mh.poll()); // 10
-console.log(mh.poll()); // 100
+console.log(minheap.poll()); // 1
+console.log(minheap.poll()); // 5
+console.log(minheap.poll()); // 8
+console.log(minheap.poll()); // 10
+console.log(minheap.poll()); // 100
 
-console.log(mh); // array(0)
+console.log(minheap); // array(0)
 
 
 //최대 힙을 사용하는 코드
+const maxheap = new MaxHeap();
+maxheap.add(1);
+maxheap.add(10);
+maxheap.add(5);
+maxheap.add(100);
+maxheap.add(8);
+
+console.log(maxheap); //array(5) [100, 10, 5, 1, 8]
+
+console.log(maxheap.poll()); // 100
+console.log(maxheap.poll()); // 10
+console.log(maxheap.poll()); // 8
+console.log(maxheap.poll()); // 5
+console.log(maxheap.poll()); // 1
+
+console.log(maxheap); // array(0)
