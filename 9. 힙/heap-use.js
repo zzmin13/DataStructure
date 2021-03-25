@@ -8,18 +8,10 @@ minheap.add(5);
 minheap.add(100);
 minheap.add(8);
 
-console.log(minheap); //array(5) [1, 8, 5, 100, 10]
+console.log(minheap.items); //array(5) [1, 8, 5, 100, 10]
+console.log(minheap.sort()); 
 
-console.log(minheap.poll()); // 1
-console.log(minheap.poll()); // 5
-console.log(minheap.poll()); // 8
-console.log(minheap.poll()); // 10
-console.log(minheap.poll()); // 100
-
-console.log(minheap); // array(0)
-
-
-//최대 힙을 사용하는 코드
+// //최대 힙을 사용하는 코드
 const maxheap = new MaxHeap();
 maxheap.add(1);
 maxheap.add(10);
@@ -27,12 +19,5 @@ maxheap.add(5);
 maxheap.add(100);
 maxheap.add(8);
 
-console.log(maxheap); //array(5) [100, 10, 5, 1, 8]
-
-console.log(maxheap.poll()); // 100
-console.log(maxheap.poll()); // 10
-console.log(maxheap.poll()); // 8
-console.log(maxheap.poll()); // 5
-console.log(maxheap.poll()); // 1
-
-console.log(maxheap); // array(0)
+console.log(maxheap.items); //array(5) [100, 10, 5, 1, 8]
+console.log(maxheap.sort()); // array(5) [100, 10, 8, 5, 1]

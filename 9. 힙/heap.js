@@ -91,9 +91,18 @@ class MinHeap extends Heap{
 
         return item; // keep해둔 값 반환
     }
+    sort(){
+        let sort = [];
+        const count = this.items.length;
+        for(let i = 0; i < count; i++){
+            sort.push(this.poll());
+        }
+        return sort;
+    }
 }
 
-class MaxHeap extends Heap{
+class MaxHeap extends MinHeap{
+    //MaxHeap의 경우 MinHeap을 상속받았으므로 MinHeap의 모든 함수를 사용할 수 있지만 bubbleUp과 bubbleDown은 Overriding(재정의)하였다.
     bubbleUp(){
         let index = this.items.length - 1;
         while(this.parent(index) && this.parent(index) < this.items[index]){
@@ -113,22 +122,5 @@ class MaxHeap extends Heap{
             this.swap(largerIndex, index);
             index = largerIndex;
         }
-    }
-
-    //힙에서 원소를 추가하는 함수
-    add(item){
-        this.items[this.items.length] = item;
-        this.bubbleUp();
-    }
-
-    // 힙에서 원소를 빼내는 함수
-    // 최소 힙이라면 최솟값이 빠져나올 것이고 최대힙이라면 최댓값이 빠져나온다.
-    poll(){
-        let item = this.items[0];
-        this.items[0] = this.items[this.items.length - 1];
-        this.items.pop();
-        this.bubbleDown();
-
-        return item;
     }
 }
