@@ -56,7 +56,10 @@ class MinHeap extends Heap {
 
   bubbleUp() {
     let index = this.items.length - 1;
-    while (this.parent(index) && this.parent(index) > this.items[index]) {
+    while (
+      this.parent(index) !== undefined &&
+      this.parent(index) > this.items[index]
+    ) {
       this.swap(index, this.parentIndex(index));
       index = this.parentIndex(index);
     }
@@ -66,13 +69,13 @@ class MinHeap extends Heap {
     let index = 0;
 
     while (
-      this.leftChild(index) &&
+      this.leftChild(index) !== undefined &&
       (this.leftChild(index) < this.items[index] ||
         this.rightChild(index) < this.items[index])
     ) {
       let smallerIndex = this.leftChildIndex(index);
       if (
-        this.rightChild(index) &&
+        this.rightChild(index) !== undefined &&
         this.rightChild(index) < this.items[smallerIndex]
       ) {
         smallerIndex = this.rightChildIndex(index);
@@ -112,7 +115,10 @@ class MaxHeap extends MinHeap {
   //MaxHeap의 경우 MinHeap을 상속받았으므로 MinHeap의 모든 함수를 사용할 수 있지만 bubbleUp과 bubbleDown은 Overriding(재정의)하였다.
   bubbleUp() {
     let index = this.items.length - 1;
-    while (this.parent(index) && this.parent(index) < this.items[index]) {
+    while (
+      this.parent(index) !== undefined &&
+      this.parent(index) < this.items[index]
+    ) {
       this.swap(index, this.parentIndex(index));
       index = this.parentIndex(index);
     }
@@ -122,13 +128,13 @@ class MaxHeap extends MinHeap {
     let index = 0;
 
     while (
-      this.leftChild(index) &&
+      this.leftChild(index) !== undefined &&
       (this.leftChild(index) > this.items[index] ||
         this.rightChild(index) > this.items[index])
     ) {
       let largerIndex = this.leftChildIndex(index);
       if (
-        this.rightChild(index) &&
+        this.rightChild(index) !== undefined &&
         this.rightChild(index) > this.items[largerIndex]
       ) {
         largerIndex = this.rightChildIndex(index);
